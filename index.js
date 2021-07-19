@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-app.listen(8000);
+//const PORT = 8000;
+app.listen(process.env.PORT);
 
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs());
