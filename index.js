@@ -6,6 +6,11 @@ app.listen(process.env.PORT);
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
+app.use(express.urlencoded({ extended: true }));
+const cors = require("cors");
+app.use(cors());
+jsonwebtoken : const jwt = require('jsonwebtoken')
+const JWT_SECRET = 'clé_pour_encrypter_notre_token' 
 
 const hotels = ["Hilton", "Ritz", "Trianon Palace"];
 
@@ -29,3 +34,7 @@ app.put("/hotels/:index", (req, res) => {
   //hotels.splice(indexFirst, 1, name);
   hotels[indexFirst] = name;
 });
+app.get("/login", (req, res) => {
+    res.render('login')
+});
+app.get('/auth/login',(req,res)=>{})
