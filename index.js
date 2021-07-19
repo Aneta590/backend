@@ -5,7 +5,8 @@ app.listen(8000);
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
-const hôtels = ["Hilton", "Ritz", "Trianon Palace"];
+
+const hotels = ["Hilton", "Ritz", "Trianon Palace"];
 
 app.get("/hotels", (req, res) => {
   res.send(hotels);
